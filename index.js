@@ -11,6 +11,10 @@ app.use(cors());
 app.use(express.json());
 
 
-get.app('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('werehouse server running')
+})
+
+app.listen(port, () => {
+    console.log('listen to port', port);
 })
