@@ -40,6 +40,10 @@ app.get('/', (req, res) => {
     res.send('werehouse server running')
 })
 
+app.get('/hero', (req, req) => {
+    res.send('hello all hero are you here ');
+})
+
 app.listen(port, () => {
     console.log('listen to port', port);
 })
