@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
     res.send('werehouse server running')
 })
 
-app.get('/hero', (req, req) => {
+app.get('/hero', (req, res) => {
     res.send('hello all hero are you here ');
 })
 
