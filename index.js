@@ -23,7 +23,8 @@ async function run() {
             const cursor = inventoryCollection.find(query);
             const inventorys = await cursor.toArray();
             res.send(inventorys);
-        })
+        });
+
     }
     finally {
 
