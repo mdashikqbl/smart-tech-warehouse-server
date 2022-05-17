@@ -58,7 +58,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-    res.send('werehouse server running')
+    res.send('werehouse is running to server')
 })
 
 app.listen(port, () => {
