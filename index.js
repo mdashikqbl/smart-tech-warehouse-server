@@ -18,6 +18,7 @@ async function run() {
         await client.connect();
         const inventoryCollection = client.db('smarttech').collection('Inventory');
 
+
         app.get('/inventory', async (req, res) => {
             const query = {};
             const cursor = inventoryCollection.find(query);
@@ -31,6 +32,14 @@ async function run() {
             const inventory = await inventoryCollection.findOne(query);
             res.send(inventory);
         });
+        app.get('/myItemInventory', async (req, res) => {
+            const email = req.query.email;
+            const query = { email: email };
+            const cursor = inventoryCollection.find(query);
+            const myItem = await cursor.toArray();
+            res.send(myItem);
+        })
+
         // post
         app.post('/inventory', async (req, res) => {
             const newInventory = req.body;
